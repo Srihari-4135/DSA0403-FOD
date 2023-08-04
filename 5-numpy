@@ -1,0 +1,22 @@
+import numpy as np
+
+fuel_efficiency_data = [] 
+a = int(input("Enter the size of data:"))
+for i in range(0,a):
+    b = int(input("Enter the data:"))
+    fuel_efficiency_data.append(b)
+fuel_efficiency = np.array(fuel_efficiency_data)
+
+average_fuel_efficiency = np.mean(fuel_efficiency)
+print("Average Fuel Efficiency: {:.2f} miles per gallon".format(average_fuel_efficiency))
+
+model1_index = 0 
+model2_index = 1  
+
+fuel_efficiency_model1 = fuel_efficiency[model1_index]
+fuel_efficiency_model2 = fuel_efficiency[model2_index]
+
+percentage_improvement = ((fuel_efficiency_model2 - fuel_efficiency_model1) / fuel_efficiency_model1) * 100
+
+print("Percentage improvement in fuel efficiency between Model {} and Model {}: {:.2f}%".format(
+    model1_index, model2_index, percentage_improvement))
